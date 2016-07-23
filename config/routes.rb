@@ -1,27 +1,18 @@
 Rails.application.routes.draw do
-  get 'users/new'
 
-  get 'pages/home'
+  root 'pages#home'
 
-  get 'pages/about'
+  get '/new', to: 'pages#new'
+  get '/about', to: 'pages#about'
+  get '/help', to: 'pages#help'
+  get '/contact', to: 'pages#contact'
+  get '/jobs', to: 'pages#jobs'
+  get '/events', to: 'pages#events'
+  get '/new_events', to: 'pages#new_events'
+  get '/featured_users', to: 'pages#featured_users'
+  get '/new_users', to: 'pages#new_users'
+  get '/career', to: 'pages#career'
+  get '/faq', to: 'pages#faq'
+  get  '/signup',  to: 'users#new'
 
-  get 'pages/help'
-
-  get 'pages/contact'
-
-  get 'pages/jobs'
-
-  get 'pages/events'
-
-  get 'pages/new_events'
-
-  get 'pages/featured_users'
-
-  get 'pages/new_users'
-
-  get 'pages/career'
-
-  get 'pages/faq'
-
-  root 'application#hello'
 end
