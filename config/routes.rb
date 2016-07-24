@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get '/career', to: 'pages#career'
   get '/faq', to: 'pages#faq'
   get  '/signup',  to: 'users#new'
-
+  post '/signup',  to: 'users#create'
+  resources :users
 end
