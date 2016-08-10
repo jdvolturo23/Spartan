@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+
 
 /* mixins, variables, etc. */
 
@@ -151,6 +153,10 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+}
+
+.perth {
+  margin-top: 100px;
 }
 
 /* miscellaneous */

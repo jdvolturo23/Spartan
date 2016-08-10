@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
+
   def home
+    @user = current_user
   end
 
   def about
@@ -11,24 +13,4 @@ class PagesController < ApplicationController
   def contact
   end
 
-  def jobs
-  end
-
-  def events
-  end
-
-  def new_events
-  end
-
-  def featured_users
-  end
-
-  def new_users
-  end
-
-  def career
-  end
-
-  def faq
-  end
 end
