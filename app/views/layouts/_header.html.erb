@@ -1,48 +1,67 @@
 <!-- THE HEADER -->
 <header>
-  <div class="container-fluid custom-container">
-    <div class="row no_row row-header">
-      <div class="brand-be">
-        <%= link_to image_tag("spartan-logo.png", alt: "logo", height: '40' ), root_path %>
-        <!--
-        <a href="/home">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
 
-          <img src="/images/logo.png" alt="logo" />
-          <img class="logo-c active be_logo"  src="app/assets/images/logo.png" alt="logo">
-          <img class="logo-c be_logo" src="img/logo-green.png" alt="logo2">
-          <img class="logo-c be_logo" src="img/logo-orang.png" alt="logo3">
-          <img class="logo-c be_logo" src="img/logo-red.png" alt="logo4">
-        </a>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= image_tag("spartan-logo.png", :class => "logo") %>
+      </div><!--end navbar-header-->
 
-        -->
-      </div>
-      <div class="header-menu-block">
-        <!-- Hambuger-->
-        <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span></span></button>
 
-        <ul class="header-menu" id="one">
-          <li><%= link_to "Home", root_path %></li>
-          <li><a href="#">Users</a>
-            <ul>
-              <li><%= link_to "Help", help_path %></li>
-              <li><%= link_to "About", about_path %></li>
-              <li><%= link_to "Contact", contact_path %></li>
-            </ul>
-          </li>
-          <li><%= link_to "Help", help_path %></li>
-          <li><%= link_to "About", about_path %></li>
-          <li><%= link_to "Contact", contact_path %></li>
-          <!--
-          <li id="ad-work-li"><a id="add-work-btn" class="btn color-1" href="work.html">Add Work </a></li>
-          -->
-        </ul>
-      </div>
-      <div class="login-header-block">
-        <div class="login_block">
-          <a class="btn-login btn color-1 size-2 hover-2" href="/login" ><i class="fa fa-user"></i>
-          Log in</a>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+
+          <li><%= link_to 'Home', '/' %></li>
+          <li><%= link_to 'Contact', '/contact' %></li>
+          <li><%= link_to 'Help', '/help' %></li>
+          <li><%= link_to 'About', '/about' %></li>
+
+          <% if logged_in? %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><%= link_to 'Users', users_path %></li>
+                <li><%= link_to "Profile", current_user %></li>
+                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                <li class="divider"></li>
+                <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+              </ul><!-- end dropdown-menu -->
+            </li><!-- end dropdown -->
+          <% else %>
+            <li><%= link_to "Log in", login_path %></li>
+          <% end %>
+
+        </ul><!-- end nav navbar-nav -->
+
+        <!-- Log-in
+        <div class="log_in">
+          <% if logged_in? %>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Profile <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Users', users_path %> </li>
+                <li><%= link_to "Profile", current_user %></li>
+                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+              </ul>
+            </div>
+
+            <% else %>
+              <li><%= link_to "Log in", login_path %></li>
+            <% end %>
         </div>
-      </div>
-    </div>
-  </div>
-</header>
+-->
+      </div><!-- end collapse navbar-collapse -->
+    </div><!-- end container-fluid -->
+  </nav><!-- end navbar navbar-default -->
+</header><!-- end header -->

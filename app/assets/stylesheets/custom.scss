@@ -3,20 +3,22 @@
 @import "font-awesome";
 
 
-/* mixins, variables, etc. */
+$gray-medium-light: #f0edee;
+$black: #001514;
+$teal-medium-light: #7fb7b5;
+$light-blue: #cee5f2;
+$teal: #2c666e;
 
-$gray-medium-light: #eaeaea;
 
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
-}
 
 /* universal */
 
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
-  padding-top: 60px;
+  padding-top: 10px;
 }
 
 section {
@@ -53,7 +55,6 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $gray-light;
 }
 
 p {
@@ -62,34 +63,140 @@ p {
 }
 
 
-/* header */
-
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
+/*
+==================================
+	01 - NAV AND LOGO
+==================================
+*/
+.navbar {
+  background-color: #001514;
+  margin-top: -10px;
+  position: relative;
+  display: block;
 }
 
-/* footer */
+.logo {
+    position: absolute;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    display: block;
+}
 
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  margin-left: 50px;
+}
+
+.log_in {
+  float: right;
+  display:inline;
+}
+
+/*
+==================================
+	02 - HEADER BACKGROUND
+==================================
+*/
+
+.head-bg {
+  background-color: $light-blue;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  margin: auto;
+}
+
+.head-bg-content {
+  display: block;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  color: $black;
+  background-image: url("soccer.jpeg");
+}
+
+.welcome {
+  position: relative;
+  text-align: center;
+  padding-top: 100px;
+  color: #fff;
+}
+
+.welcome h1 {
+  font-size: 80px;
+  text-shadow: 2px 2px 8px #000;
+}
+
+.welcome p {
+  font-size: 20px;
+  text-shadow: 2px 2px 8px #000;
+}
+
+.facebook.btn {
+  background-color: #3b5998; /* facebook blue */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.fa-facebook-f:before, .fa-facebook:before {
+  padding-right: 10px;
+}
+
+.fa-lock:before {
+  padding-right: 10px;
+}
+
+.fa.fa-facebook {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.be-register.btn {
+  background-color: $teal;
+  border: none;
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.fa.fa-lock a {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.head-bg-content p {
+  padding-bottom: 20px;
+}
+
+
+
+/*
+==================================
+	03 - FOOTER
+==================================
+*/
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
+  border-top: 1px solid $teal;
+  color: $teal;
   a {
-    color: $gray;
+    color: $teal;
     &:hover {
-      color: $gray-darker;
+      color: $teal-medium-light;
     }
   }
   small {
@@ -105,8 +212,11 @@ footer {
   }
 }
 
-/* sidebar */
-
+/*
+==================================
+	04 - SIDEBAR
+==================================
+*/
 aside {
   section.user_info {
     margin-top: 20px;
@@ -142,31 +252,31 @@ aside {
   margin-top: 15px;
 }
 
-/* forms */
-
+/*
+==================================
+	05 - FORMS
+==================================
+*/
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
-  @include box_sizing;
 }
 
 input {
   height: auto !important;
 }
 
-.perth {
-  margin-top: 100px;
-}
-
-/* miscellaneous */
-
+/*
+==================================
+	06 - MISCELLANEOUS
+==================================
+*/
 .debug_dump {
   clear: both;
   float: left;
   width: 100%;
   margin-top: 45px;
-  @include box_sizing;
 }
 
 .checkbox {
